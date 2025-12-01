@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 # ============================
 # 1. LOAD CLEANED DATA
 # ============================
-df = pd.read_csv("data/london_airbnb_clean.csv")
+df = pd.read_csv("london_airbnb_clean.csv")
 df["room_type"] = df["room_type"].astype("category")
 df["time_period"] = df["time_period"].astype("category")
 
@@ -24,7 +24,6 @@ px.defaults.color_discrete_sequence = ["#003688", "#E32017", "#FF8F1C"]
 # ============================
 app = Dash(__name__)
 server = app.server
-
 
 # Dropdown options
 room_type_options = [{"label": rt, "value": rt} for rt in sorted(df["room_type"].unique())]
@@ -377,4 +376,5 @@ def update_hist(room, timep, sat):
 # ============================
 if __name__ == "__main__":
     app.run(debug=True)
+
 
