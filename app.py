@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 # ============================
 # 1. LOAD CLEANED DATA
 # ============================
-df = pd.read_csv("london_airbnb_clean.csv")
+df = pd.read_csv("data/london_airbnb_clean.csv")
 df["room_type"] = df["room_type"].astype("category")
 df["time_period"] = df["time_period"].astype("category")
 
